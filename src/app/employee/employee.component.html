@@ -1,0 +1,32 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Hire date</th>
+      <th>Salary</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let employee of employees; let isFirst = first"
+      [class.first]="isFirst"
+      class="rows"
+    >
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.hireDate | date: 'dd-MM-yyyy' }}</td>
+      <td>${{ employee.salary }}</td>
+      <td>
+        <a
+          *ngIf="employees.length > 1"
+          href="javascript:void(0)"
+          (click)="deleteEmployee(employee)"
+        >
+          delete
+        </a>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
