@@ -27,7 +27,7 @@ export class EmployeeComponent implements OnInit {
 
   deleteEmployee(employee) {
     const index = this.employees.indexOf(employee);
-    this.employees.splice(employee, 1);
+    this.employees.splice(index, 1);
   }
 
 }
